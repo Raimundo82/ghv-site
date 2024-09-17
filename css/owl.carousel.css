@@ -1,0 +1,69 @@
+
+
+#owl {
+	z-index: 1;
+	position: relative;
+}
+
+
+#owl .owl-item {
+	float: left;
+}
+
+#owl .item {
+	padding-bottom: 88px;
+	text-align: center;
+	padding-top: 11px;
+	font-size: 18px;
+}
+
+#owl .item .text2 {
+	margin-bottom: 22px;
+}
+
+
+#owl .owl-wrapper-outer {
+	overflow: hidden;
+}
+
+#owl  .owl-controls {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#owl .owl-prev, #owl .owl-next {
+	cursor: pointer;
+	position: absolute;
+	background: url(../images/prevnext1.png) 0 0 no-repeat;
+	display: block;
+	height: 39px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -46px;
+	width: 45px;
+	overflow: hidden;
+	text-indent: -999px;
+}
+
+#owl .owl-next {
+	margin-left: 2px;
+	background-position: right 0;
+}
+
+#owl .owl-next:hover,
+#owl .owl-prev:hover {
+	opacity: 0.5;
+}
+
+/* Owl content */
+
+
+
+.owl-carousel .owl-wrapper{
+	display: none;
+	position: relative;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	-webkit-perspective: 1000;
+}

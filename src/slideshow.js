@@ -1,3 +1,4 @@
+const NUMBER_OF_SLIDES = 3;
 const slides = document.body.querySelectorAll("div.slides");
 const dots = document.body.querySelectorAll("img.demo");
 const captionText = document.getElementById("caption");
@@ -8,21 +9,19 @@ dots.forEach((dot, index) =>
   dot.addEventListener("click", () => showSlides(index))
 );
 
-prev.addEventListener(
-  "click",
-  () => showSlides(getCurrentActiveSlide() - 1) % 2
-);
-
-next.addEventListener("click", () => {
+prev.addEventListener("click", () => {
   const currentIndex = getCurrentActiveSlide();
-  console.log(currentIndex);
-  console.log((currentIndex + 1) % 3);
-  showSlides((currentIndex + 1) % 3);
+  const prevIndex =
+    ((NUMBER_OF_SLIDES + (currentIndex - 2)) % NUMBER_OF_SLIDES) + 1;
+  showSlides(prevIndex - 1);
 });
 
+next.addEventListener("click", () =>
+  showSlides(getCurrentActiveSlide() % NUMBER_OF_SLIDES)
+);
+
 function getCurrentActiveSlide() {
-  const index = [...slides].findIndex((slide) => !slide.getAttribute("hidden"));
-  return index === 0 ? 3 : index;
+  return [...slides].findIndex((slide) => !slide.hasAttribute("hidden")) + 1;
 }
 
 function showSlides(index) {
